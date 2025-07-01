@@ -4,9 +4,9 @@
 import "./globals.css";
 
 // Import necessary components and hooks
-import Sidenav from "./_components/Sidenav";
+import Sidenav from "./admin/_components/Sidenav";
 import { useEffect, useState } from "react";
-import Header from "./_components/MobileHeader";
+import Header from "./admin/_components/MobileHeader";
 
 // Define the RootLayout component
 export default function RootLayout({

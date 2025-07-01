@@ -1,6 +1,7 @@
 "use client";
 
 
+import { formatCurrency } from '@/app/lib/formatters';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
@@ -24,8 +25,8 @@ export function OrdersByDayCharts({data} : OrdersByDayChartProps) {
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid stroke="hsl(var(--muted))" />
             <XAxis dataKey="date" />
-            <YAxis  />
-            <Tooltip />
+            <YAxis  tickFormatter={tick => formatCurrency(tick)}/>
+            <Tooltip formatter={value => formatCurrency(value as number)}/>
             <Legend />
             <Line dot={false} type="monotone" dataKey="totalSales" stroke="#8884d8" />
         </LineChart>
