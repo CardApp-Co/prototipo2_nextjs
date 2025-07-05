@@ -28,7 +28,7 @@ export default function Layout({
                 <ul>
                     <li id="user-male"><img src="/imagens/user-male.png" alt="user-male" /></li>
                     <li><a href="/">HOME PAGE &gt; </a></li>
-                    <li><a href="/products">FILTROS &gt;</a></li>
+                    <li><a href="/products">PRODUTOS &gt;</a></li>
                     <li><a href="/orders">CARRINHO &gt;</a></li>
                 </ul>
             </div>
