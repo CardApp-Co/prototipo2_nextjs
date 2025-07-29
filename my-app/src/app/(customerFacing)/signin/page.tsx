@@ -3,6 +3,7 @@
 import db from "@/src/db/db"
 import { notFound } from "next/navigation"
 import React, { useState } from "react"
+import "./style.css"
 
 export default function SignInPage({ }) {
 
@@ -30,34 +31,29 @@ export default function SignInPage({ }) {
                 
             })
         }) 
+        console.log(response)
     }
 
-    return <div>
+    return <>
+            <div>
+                <img id="img-logotipo" src="imagens/logotipo.png" alt="logotipo" />
+            </div>
+            <form onSubmit={handleSubmit} action={"/HomePage"}>
+                <p id="p1">Não tem um restaurante? Faça o seu!</p>
+                <input type="text" placeholder="Nome do restaurante" value={name} required onChange={(e) => setName(e.target.value)} />
+                <input type="email" placeholder="email" value={email} required onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder="cnpj" value={cnpj} onChange={(e) => setCnpj(e.target.value)} required  />
+                <input type="text" placeholder="cpf" value={cpf} onChange={(e) => setCpf(e.target.value)} required/>
+                <input type="text" placeholder="Contato do restaurante" value={contact} onChange={(e) => setContact(e.target.value)} required />
+                <label id="input-file-label" htmlFor="input-file">
+                    <img src="imagens/upload_icon.svg"></img>
+                    Adicione uma foto
+                </label>
+                <div>
+                    <input id="input-file" type="file" />
+                </div>
 
-        <p> Crie seu restaurante </p>
-        <form onSubmit={handleSubmit}>
-
-            <label> Seu nome: </label>
-            <input type="text" value = {name} onChange={(e) => setName(e.target.value)}> 
-            </input>
-
-            <label> Seu email: </label>
-            <input type="text" value ={email} onChange={(e) => setEmail(e.target.value)}></input>
-            
-            <label> Seu CPF: </label>
-            <input type="text" value ={cpf} onChange={(e) => setCpf(e.target.value)}></input>
-
-            <label> Seu CNPJ: </label>
-            <input type="text" value ={cnpj} onChange={(e) => setCnpj(e.target.value)}></input>
-
-            <label> Contato do restaurante </label>
-            <input type="text" value ={contact} onChange={(e) => setContact(e.target.value)}></input>
-            
-            <button type="submit"> Criar </button>
-        </form>
-
-
-
-
-    </div>
+                <button id="cadastrar" type ="submit"> Criar </button>
+            </form>
+        </>
 }

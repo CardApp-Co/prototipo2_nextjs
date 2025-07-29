@@ -18,20 +18,7 @@ export default function Layout({
     //   <div className="container my-6">{children}</div>
     // </>
             <>
-            <header>
-                <div className="divLogo">
-                    <img className="logo" src="/imagens/cardapp-logo-nome.png" alt="cardapp-logo-nome" />
-                </div>
-            </header>
-
-            <div className="navbar">
-                <ul>
-                    <li id="user-male"><img src="/imagens/user-male.png" alt="user-male" /></li>
-                    <li><a href="/">HOME PAGE &gt; </a></li>
-                    <li><a href="/products">PRODUTOS &gt;</a></li>
-                    <li><a href="/orders">CARRINHO &gt;</a></li>
-                </ul>
-            </div>
+            
             <div className="container my-6">{children}</div>
         </>
 

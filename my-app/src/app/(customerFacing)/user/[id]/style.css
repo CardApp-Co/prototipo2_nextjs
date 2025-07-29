@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Julius Sans One, Roboto;
+  color: #273060;
+}
+
+body {
+  padding-bottom: 20px;
+  background-color: white;
+}
+
+/*MAIN*/
+
+/*
+.container-localizacao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 68px;
+}
+
+.texto-acima-localizacao{
+  font-size: 50px;
+  background-color: #273060;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  width: 637px;
+  height: 51px;
+}
+.localizacao{
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #273060;
+  width: 963px;
+  height: 100px;
+  justify-content: center;
+}
+
+.localizacao p{
+  color: #273060;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+*/
