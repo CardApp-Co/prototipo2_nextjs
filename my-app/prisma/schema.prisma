@@ -16,9 +16,7 @@ model Product {
   isAvailableForPurchase Boolean                @default(true)
   createdAt              DateTime               @default(now())
   updatedAt              DateTime               @updatedAt
-  downloadVerifications  DownloadVerification[]
   orders                 Order[]
-  discountCodes          DiscountCode[]         @relation("DiscountCodeToProduct")
 }
 
 model User {
@@ -49,36 +47,8 @@ model Order {
   updatedAt        DateTime     @updatedAt
   userId           String
   productId        String
-  discountCodeId   String
-  discountCode     DiscountCode @relation(fields: [discountCodeId], references: [id])
   product          Product      @relation(fields: [productId], references: [id])
   user             User         @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model DownloadVerification {
-  id        String   @id @default(uuid())
-  expiresAt DateTime
-  createdAt DateTime @default(now())
-  productId String
-  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-}
 
-model DiscountCode {
-  id             String           @id @default(uuid())
-  code           String           @unique
-  discountAmount Int
-  discountType   DiscountCodeType
-  uses           Int              @default(0)
-  isActive       Boolean          @default(true)
-  allProducts    Boolean          @default(false)
-  createdAt      DateTime         @default(now())
-  limit          Int?
-  expiresAt      DateTime?
-  orders         Order[]
-  products       Product[]        @relation("DiscountCodeToProduct")
-}
-
-enum DiscountCodeType {
-  PERCENTAGE
-  FIXED
-}
