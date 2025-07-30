@@ -3,6 +3,9 @@ import { notFound } from "next/navigation"
 import Stripe from "stripe"
 import { CheckoutForm } from "./_components/CheckoutForm"
 
+import './styles/style.css';
+import './styles/style_header.css'
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 export default async function PurchasePage({
     params,

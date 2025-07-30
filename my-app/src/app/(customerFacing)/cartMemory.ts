@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 const cart_key = "cart"
 export type CartProduct = {
-    id: number,
+    id: string,
     amount: number
 }
 
@@ -36,7 +36,7 @@ export const useCart = () => {
             localStorage.setItem(cart_key, JSON.stringify(cart))
         }, [cart])
     
-        function addToCart(id: number) {
+        function addToCart(id: string) {
             setCart((currentCart) => {
                 var newCart = currentCart.slice()
                 
@@ -58,7 +58,7 @@ export const useCart = () => {
             })
         }
     
-        function removeFromCart(id :number) {
+        function removeFromCart(id :string) {
             setCart((currentCart) => {
                 var newCart = currentCart.slice()
                 

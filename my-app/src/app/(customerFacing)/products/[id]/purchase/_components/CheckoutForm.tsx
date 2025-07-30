@@ -8,8 +8,11 @@ import { loadStripe } from "@stripe/stripe-js"
 import Image from "next/image"
 import { FormEvent, useState } from "react"
 
+import { useCart } from '@/src/app/(customerFacing)/cartMemory'
+
 type CheckoutFormProps = {
     product: {
+        id: string,
         imagePath: string,
         name: string,
         description: string,
@@ -21,6 +24,12 @@ type CheckoutFormProps = {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string)
 
 export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
+    const { cart, addToCart } = useCart()
+
+    const handleAdd = () => {
+        addToCart(product.id)
+    }
+
     return (
         <div className="max-w-5x1 w-full mx-auto space-y-8">
 
@@ -33,6 +42,7 @@ export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
                         {formatCurrency(product.priceInCents / 100)}
                     </div>
                     <h1 className="text=2x1 font-bold">{product.name}</h1>
+                    <button className="botao-teste" onClick={handleAdd}>ADICIONAR À COMANDA</button>
                 </div>
             </div>
             <Elements options={{ clientSecret }} stripe={stripePromise}>
@@ -59,7 +69,7 @@ function Form({ priceInCents }: { priceInCents: number }) {
         if (stripe == null || elements == null || email == null) return
 
         setIsLoading(true)
-        
+
         stripe.confirmPayment({
             elements, confirmParams: {
                 return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/stripe/purchase-success`
