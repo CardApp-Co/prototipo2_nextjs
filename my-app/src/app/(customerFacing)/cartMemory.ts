@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 
 const cart_key = "cart"
-type CartProduct = {
+export type CartProduct = {
     id: number,
     amount: number
 }

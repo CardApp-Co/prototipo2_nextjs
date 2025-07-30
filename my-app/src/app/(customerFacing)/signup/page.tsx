@@ -3,7 +3,7 @@
 import db from "@/src/db/db"
 import { notFound } from "next/navigation"
 import React, { useState } from "react"
-import "./style.css"
+import "./signin.css"
 
 export default function SignInPage({ }) {
 
@@ -31,7 +31,13 @@ export default function SignInPage({ }) {
                 
             })
         }) 
-        console.log(response)
+        
+        if (response.status == 200) {
+            const data = await response.json()
+            const userId = data.userId
+            window.location.href = "http://localhost:3000/user/" + userId
+        }
+
     }
 
     return <>

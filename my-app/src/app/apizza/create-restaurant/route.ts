@@ -39,7 +39,8 @@ export async function POST(req: Request) {
         });
 
         return NextResponse.json({
-            message: "Restaurante criado!"
+            message: "Restaurante criado!",
+            userId: user.id
         }, { status: 200 })
     } catch (error) {
         console.log(error)

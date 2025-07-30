@@ -1,50 +1,154 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Julius Sans One, Roboto;
+  font-family: Roboto;
+}
+
+*:active {
+  cursor: default;
+  max-width: 100%;
+}
+
+a {
   color: #273060;
+  font-family: Julius Sans One;
 }
 
 body {
-  padding-bottom: 20px;
-  background-color: white;
+  padding-bottom: 50px;
 }
 
-/*MAIN*/
+button {
+  border: none;
+  background-color: transparent;
+}
 
 /*
-.container-localizacao{
+.container-criar-secao {
+  display: flex;
+  justify-content: end;
+}
+
+.container-criar-secao button span{
+    width: 100px;
+}
+
+.container-criar-secao button {
+  width: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 68px;
+  margin: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 0.15s;
 }
 
-.texto-acima-localizacao{
-  font-size: 50px;
-  background-color: #273060;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
-  width: 637px;
-  height: 51px;
-}
-.localizacao{
-  display: flex;
-  flex-direction: column;
-  border: 5px solid #273060;
-  width: 963px;
-  height: 100px;
-  justify-content: center;
-}
-
-.localizacao p{
-  color: #273060;
-  font-size: 48px;
-  font-weight: 700;
+.container-criar-secao button:hover {
+  opacity: 0.7;
 }
 
 */
+
+.container-secao {
+  margin-top: 50px;
+}
+
+.container-secao-div-acima span {
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #273060;
+  color: white;
+  margin-left: 50px;
+  padding: 7px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/*
+.container-secao-div-acima span button {
+  border: none;
+  cursor: pointer;
+  background-color: #273060;
+  transition: opacity 0.15s;
+}
+
+.container-secao-div-acima span button i {
+  color: white;
+}
+
+.container-secao-div-acima span button:hover {
+  opacity: 0.7;
+}*/
+
+.container-secao-pratos {
+  margin-top: 4px;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  overflow-x: auto;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container-prato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  text-align: center;
+  transition: opacity 0.15s;
+}
+
+.cartao{
+  align-items: center;
+  text-align: center;
+}
+.container-prato:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.container-prato p {
+  font-family: Roboto;
+  font-weight: 500;
+  word-break: break-word;
+  color: #273060;
+}
+
+.prato-imagem {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #273060;
+  border-radius: 5px;
+  transition: all 0.15s;
+}
+
+.prato-imagem img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+
+}
+
+/*.prato-imagem:hover{
+  opacity: 0.6;
+  filter: blur(2px);
+}*/
+
+.adicionar-prato {
+  cursor: pointer;
+  transition: opacity 0.15s;
+  width: 120px;
+}
+
+.adicionar-prato img{
+  width: 120px;
+}
+
+.adicionar-prato:hover {
+  opacity: 0.7;
+}

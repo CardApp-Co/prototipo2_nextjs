@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  overflow-y: hidden;
+}
+
+.div-body {
+  display: flex;
+  flex-direction: row;
+}
+.col1 {
+  background-color: white;
+  width: 100px;
+  height: 50vw;
+  flex: 1;
+}
+
+.col1 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.col2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #273060;
+  flex: 0.56;
+  font-family: Inter;
+}
+
+.col2 h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 268px;
+  margin-bottom: 227px;
+}
+
+.container-botoes {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-bottom: 17px;
+}
+
+.botao {
+  border: none;
+  font-family: Inter;
+  font-weight: 900;
+  background-color: white;
+  color: #273060;
+  font-size: 18px;
+  width: 240.069px;
+  height: 58.056px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  transition: all 0.15s;
+}
+
+.botao:hover{
+  opacity: 0.7;
+}
+
+.p-abaixo {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#img-logotipo {
+  margin: 8px;
+  position: fixed;
+}
+
+#img-grupo-comida {
+}
