@@ -17,11 +17,11 @@ const getNewestProduct = cache(() => {
     return db.product.findMany({ where: { isAvailableForPurchase: true }, orderBy: { createdAt: "desc" }, take: 6 })
 }, ["/", "getNewestProduct"])
 
-/*
+
 const getAllProducts = cache(() => {
-    return db.product.findMany({ where: {isAvailableForPurchase: true}, orderBy: { name: "asc"}})
+    return db.product.findMany({ where: { isAvailableForPurchase: true }, orderBy: { name: "asc" } })
 }, ["/", "getAllProducts"])
-*/
+
 
 function wait(duration: number) {
     {
@@ -29,13 +29,23 @@ function wait(duration: number) {
     }
 }
 
-export default function HomePage() {
+
+export default function HomePage({ params }: { params: { id: string } }) {
     return (
         <main>
             <DefaultHeader />
-
             <ProductGridSection title="Mais populares" productsFetcher={getMostPopularProduct} />
             <ProductGridSection title="Mais novos" productsFetcher={getNewestProduct} />
+        </main>
+    );
+}
+
+export function UserProductPage() {
+    return (
+        <main>
+            <ProductGridSection title="Mais populares" productsFetcher={getMostPopularProduct} />
+            <ProductGridSection title="Mais novos" productsFetcher={getNewestProduct} />
+            <ProductGridSection title="Todos" productsFetcher={getAllProducts} />
         </main>
     );
 }

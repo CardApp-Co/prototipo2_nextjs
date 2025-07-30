@@ -51,13 +51,6 @@ export default function SignInPage({ }) {
                 <input type="text" placeholder="cnpj" value={cnpj} onChange={(e) => setCnpj(e.target.value)} required  />
                 <input type="text" placeholder="cpf" value={cpf} onChange={(e) => setCpf(e.target.value)} required/>
                 <input type="text" placeholder="Contato do restaurante" value={contact} onChange={(e) => setContact(e.target.value)} required />
-                <label id="input-file-label" htmlFor="input-file">
-                    <img src="imagens/upload_icon.svg"></img>
-                    Adicione uma foto
-                </label>
-                <div>
-                    <input id="input-file" type="file" />
-                </div>
 
                 <button id="cadastrar" type ="submit"> Criar </button>
             </form>

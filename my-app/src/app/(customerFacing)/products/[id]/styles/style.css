@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-prato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #d9d9d9;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.comprar {
+  border-radius: 20px;
+  background-color: white;
+  color: #273060;
+  padding: 7px;
+  font-weight: 700;
+  transition: all 0.15s;
+  margin-top: 20px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.comprar:hover {
+  opacity: 0.8;
+}
+
+.container-editar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-weight: 900;
+  border: 5px solid #273060;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #273060;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container-editar:hover {
+  opacity: 0.7;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container1-nomeDoPrato {
+  font-family: Roboto;
+  background-color: #273060;
+  color: white;
+  padding: 10px 50px;
+  width: 400px;
+  word-break: break-word;
+  font-size: 30px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container1-imagem {
+  width: 400px;
+}
+.container1-imagem img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+.container-custo {
+  background-color: white;
+  color: rgb(106, 173, 4);
+  font-size: 20px;
+  font-weight: 900;
+  font-family: Roboto;
+  padding: 5px;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.botao-teste {
+  cursor: pointer;
+}
+
+.edit-icon {
+  width: 40px;
+}
+
+.botao-comanda {
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #273060;
+  color: white;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.botao-comanda:hover {
+  opacity: 0.7;
+}
+
+.botao-comanda img {
+  display: inline-block;
+}
+
+.container2 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container2-nome {
+  font-family: Roboto;
+  background-color: #273060;
+  color: white;
+  padding: 10px;
+  font-size: 30px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container2-nome button {
+  width: 25px;
+}
+
+.container2-descricao {
+  font-family: Roboto;
+  background-color: white;
+  color: #273060;
+  font-weight: 700;
+  font-size: 20px;
+  word-break: break-word;
+  max-width: 600px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+}

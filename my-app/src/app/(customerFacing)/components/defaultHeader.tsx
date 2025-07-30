@@ -7,9 +7,9 @@ export default function DefaultHeader() {
                 </div>
 
                 <div className="new-navbar">
-                    <a href="/">LOJA</a>
-                    <a href="/products">PRATOS</a>
-                    <a href="/order">comanda</a>
+                    <a href='#'>LOJA</a>
+                    <a href="products">PRATOS</a>
+                    <a href="cart">comanda</a>
                 </div>
             </header>
         </>

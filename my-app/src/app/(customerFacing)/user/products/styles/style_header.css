@@ -1,0 +1,41 @@
+
+
+.logo {
+  background-color: #273060;
+}
+
+.divLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #273060;
+  padding: 10px 0px;
+}
+
+.navbar {
+  text-align: center;
+  /* background-color: blueviolet; */
+  box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.new-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 2px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  padding: 15px 0px;
+}
+
+.new-navbar a {
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 30px;
+  padding: 10px 10px;
+  transition: opacity 0.15s, box-shadow 0.15s;
+}
+
+.new-navbar a:hover {
+  opacity: 0.7;
+  box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.2);
+}

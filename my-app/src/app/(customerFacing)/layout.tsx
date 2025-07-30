@@ -19,7 +19,7 @@ export default function Layout({
     // </>
             <>
             
-            <div className="container my-6">{children}</div>
+            <div>{children}</div>
         </>
 
   )

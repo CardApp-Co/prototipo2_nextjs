@@ -33,7 +33,57 @@ export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
     return (
         <div className="max-w-5x1 w-full mx-auto space-y-8">
 
-            <div className="flex gap-4 items-center">
+            <Elements options={{ clientSecret }} stripe={stripePromise}>
+                <Form priceInCents={product.priceInCents} />
+            </Elements>
+        </div>
+    )
+}
+
+export function Prato({ product, clientSecret }: CheckoutFormProps) {
+    const { cart, addToCart } = useCart()
+
+    const handleAdd = () => {
+        addToCart(product.id)
+    }
+
+    return (
+        <>
+            <div className='container-prato'>
+
+                <div className='container1'>
+                    <div className='container1-nomeDoPrato'>
+                        {product.name}
+                    </div>
+                    <div className='container1-imagem'>
+                        <img src={product.imagePath}></img>
+                    </div>
+                </div>
+
+                <div className="container-custo">
+                    Custo: {formatCurrency(product.priceInCents / 100)}
+                </div>
+
+                <div>
+                    <button className="botao-comanda" onClick={handleAdd}>
+                        Adicionar à comanda
+                    </button>
+                </div>
+
+                <div className='container2'>
+                    <div className='container2-nome'>
+                        Descrição
+                    </div>
+                    <div className='container2-descricao'>{product.description}</div>
+                </div>
+                <a className="comprar" href={`/products/${product.id}/purchase`}>COMPRAR</a>
+            </div>
+        </>
+    );
+}
+
+/*
+<div className="flex gap-4 items-center">
                 <div className="aspect-video flex-shrink-0 w-1/3 relative">
                     <Image src={product.imagePath} fill alt={product.name} className="object-cover" />
                 </div>
@@ -43,20 +93,15 @@ export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
                     </div>
                     <h1 className="text=2x1 font-bold">{product.name}</h1>
                     <button className="botao-teste" onClick={handleAdd}>ADICIONAR À COMANDA</button>
+                    <a href={`/products/${product.id}/purchase`}>compra logo</a>
                 </div>
             </div>
-            <Elements options={{ clientSecret }} stripe={stripePromise}>
-                <Form priceInCents={product.priceInCents} />
-            </Elements>
-        </div>
-    )
-}
+*/
 
 
 
 
-
-function Form({ priceInCents }: { priceInCents: number }) {
+export function Form({ priceInCents }: { priceInCents: number }) {
     const stripe = useStripe()
     const elements = useElements()
     const [isLoading, setIsLoading] = useState(false)

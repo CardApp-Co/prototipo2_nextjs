@@ -5,6 +5,7 @@ import { CheckoutForm } from "./_components/CheckoutForm"
 
 import './styles/style.css';
 import './styles/style_header.css'
+import DefaultHeader from "../../../components/defaultHeader";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 export default async function PurchasePage({
@@ -12,7 +13,7 @@ export default async function PurchasePage({
 }: {
     params: { id: string }
 }) {
-    const { id } = await params   
+    const { id } = await params
     const product = await db.product.findUnique({ where: { id } })
     if (product == null) return notFound()
 
@@ -23,9 +24,14 @@ export default async function PurchasePage({
         metadata: { productId: product.id }
     })
 
-    if (paymentIntent.client_secret == null){
+    if (paymentIntent.client_secret == null) {
         throw Error("Stripe  failed to create payment intent")
     }
 
-    return <CheckoutForm product={product} clientSecret={paymentIntent.client_secret}/>
+    return (
+        <>
+            <DefaultHeader />
+            <CheckoutForm product={product} clientSecret={paymentIntent.client_secret} />
+        </>
+    );
 }
